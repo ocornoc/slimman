@@ -60,8 +60,6 @@ structure game : Type :=
 (state : game_state) (score : ℕ) (lives : list entity)
 (start_time : ℕ) (cur_time : ℕ)
 
-#print io.forever
-
 private def loop_aux (xyd : ℕ × ℕ × direction) : io (option (ℕ × ℕ × direction)) := do
   c ← get_char,
   let x := xyd.fst, let y := xyd.snd.fst, let d := xyd.snd.snd,
